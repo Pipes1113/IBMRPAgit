@@ -1,4 +1,4 @@
-¶
+à
 defVar --name Prompt_Assignment --type String --value "Test-Value"
 defVar --name my_list_variable --type List --innertype String --value "[my-value-1,my-value-2,my-value-3,my-value-4,my-value-5]"
 defVar --name source --type String
@@ -22,4 +22,5 @@ while --left "${pos1}" --operator "Greater_Than" --right 0
 	incrementVar --number ${loopCounter1}
 endWhile
 webClose --name "https://www.ibm.com/us-en/"
-messageBox --title Message --text "COVID mentioned ${count} times" --icon "Information" --buttons "OK" --defaultbutton "FirstButton"*21.0.2.0
+messageBox --title Message --text "COVID mentioned ${count} times" --icon "Information" --buttons "OK" --defaultbutton "FirstButton"
+logMessage --message adsda --type "Info"*21.0.2.0
