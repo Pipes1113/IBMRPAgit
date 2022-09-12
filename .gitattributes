@@ -1,1 +1,1 @@
-*.wal text eol=crlf
+*.wal text encoding=utf-8 eol=crlf
