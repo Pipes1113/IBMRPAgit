@@ -1,0 +1,25 @@
+¶
+defVar --name Prompt_Assignment --type String --value "Test-Value"
+defVar --name my_list_variable --type List --innertype String --value "[my-value-1,my-value-2,my-value-3,my-value-4,my-value-5]"
+defVar --name source --type String
+defVar --name count --type Numeric
+defVar --name pos1 --type Numeric --value 1
+defVar --name pos2 --type Numeric --value 1
+defVar --name loopCounter1 --type Numeric --value 0
+//## Script ==========================================================
+webStart --name "https://www.ibm.com/us-en/" --type "Chrome"
+webNavigate --url "https://www.ibm.com/us-en/"
+webGetHtmlSource source=value
+setVar --name "${loopCounter1}" --value 1
+while --left "${pos1}" --operator "Greater_Than" --right 0
+	//Please enter your commands to loop.
+	parseText --text "${source}" --useRegex  --regexPattern COVID --regexOptions "IgnoreCase" --startindex ${pos2} pos1=value
+	if --left "${pos1}" --operator "Greater_Than" --right 0
+		//Please enter the conditional commands here.
+		evaluate --expression "${count}+1" count=value
+		evaluate --expression "${pos1}+1" pos2=value
+	endIf
+	incrementVar --number ${loopCounter1}
+endWhile
+webClose --name "https://www.ibm.com/us-en/"
+messageBox --title Message --text "COVID mentioned ${count} times" --icon "Information" --buttons "OK" --defaultbutton "FirstButton"*21.0.2.0
